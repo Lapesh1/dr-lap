@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Стоматолог Лапшин Илья Васильевич: сложное восстановление зубов, эстетическая реставрация и протезирование">
+  <title>Лапшин Илья Васильевич — Стоматолог</title>
+  
+  <!-- Подключаем шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Lato', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #495057;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Декоративные элементы */
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: #e6f7ff;
+      border-radius: 0 0 0 100%;
+      z-index: 0;
+    }
+    
+    .container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background: #e6f7ff;
+      border-radius: 100% 0 0 0;
+      z-index: 0;
+    }
+    
+    /* Заголовки */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      margin: 0 0 15px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      font-size: 36px;
+      color: #212529;
+      margin-top: 15px;
+    }
+    
+    .subtitle {
+      font-size: 20px;
+      color: #20a997;
+      margin-bottom: 30px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Фото профиля с анимированной рамкой */
+    .profile-img-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 25px;
+      z-index: 1;
+    }
+    
+    .profile-img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      object-position: 50% 5%;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .img-border {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid rgba(32, 169, 151, 0.6); /* Прозрачная рамка */
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 3s infinite ease-in-out;
+    }
+    
+    @keyframes pulse {
+      0% { 
+        transform: scale(1); 
+        opacity: 0.6; 
+        border-width: 2px;
+      }
+      50% { 
+        transform: scale(1.02); 
+        opacity: 0.9; 
+        border-width: 3px;
+      }
+      100% { 
+        transform: scale(1); 
+        opacity: 0.6; 
+        border-width: 2px;
+      }
+    }
+    
+    /* Основной текст */
+    p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .highlight {
+      color: #20a997;
+      font-weight: 700;
+    }
+    
+    /* Ссылки/кнопки */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      font-size: 17px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(32, 169, 151, 0.3);
+      background: linear-gradient(135deg, #20a997 0%, #1a8c7c 100%);
+      border: none;
+    }
+    
+    .links a:hover,
+    .links a:focus {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(32, 169, 151, 0.4);
+      background: linear-gradient(135deg, #1a8c7c 0%, #20a997 100%);
+    }
+    
+    /* Адаптация */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+      
+      h1 {
+        font-size: 30px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+      }
+      
+      p {
+        font-size: 16px;
+      }
+      
+      .img-border {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .profile-img {
+        width: 180px;
+        height: 180px;
+      }
+      
+      h1 {
+        font-size: 26px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      
+      .links a {
+        padding: 12px 20px;
+        font-size: 15px;
+        width: 100%;
+        max-width: 280px;
+      }
+      
+      .container::before,
+      .container::after {
+        display: none;
+      }
+      
+      .img-border {
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+      }
+    }
+    
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="profile-img-container">
+        <div class="img-border"></div>
+        <img src="photo.jpg" alt="Лапшин Илья Васильевич - стоматолог" class="profile-img">
+      </div>
+      <h1>Лапшин Илья Васильевич</h1>
+      <div class="subtitle">Врач-стоматолог</div>
+    </header>
+
+    <main>
+      <p>Специализируюсь на <span class="highlight">сложном восстановлении зубов</span>, <span class="highlight">эстетической реставрации</span> и <span class="highlight">протезировании</span>. Моя цель - создавать не просто красивые улыбки, а улыбки, которые дарят уверенность и вдохновляют.</p>
+    </main>
+
+    <div class="links">
+      <a href="https://wa.me/79277306686" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://t.me/Dr_Lap" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://instagram.com/dr.ilap" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+  
+  <footer>
+    © 2023 Лапшин Илья Васильевич. Все права защищены.
+  </footer>
+</body>
+</html>
